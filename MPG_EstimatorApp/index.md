@@ -1,0 +1,56 @@
+---
+title       : The MPG Estimator App
+subtitle    : Always know how far you can go
+author      : drs. T. Stamper
+job         : BI Engineer (IT consultancy)
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## Problem
+
+Imagine yourself planning to go on a long road trip and possibly crossing multiple states during your journey..
+
+Distances in the US are long. The distance to a fuel station, when travelling from state to state, might be very large or worse: unknown. And you don't want to get 'caught out', running out of fuel in the middle of nowhere..
+
+--- .class #id 
+
+## The solution
+
+The MPG Estimator App is your help! 
+
+By providing some basic characteristics of your car, the MPG Estimator App will give you a very accurate estimate of the mileage you can get out of each gallon of fuel. It only needs to know the type of transmission your car has and the number of forward gears.
+
+No more worries or uncertainty about getting to your destination on the fuel you have: you can now determine whether you will make it or not!
+
+--- .class #id 
+
+## The secret of the App
+
+The app uses a model, that was developed using a database (mtcars) with MPG and other information of 32 cars, to compute an estimate. This model has a number of so called 'coefficients' (see information below), which, applied using the provided values of the characteristics (am = type of transmission and gear), will produce the estimate.
+
+
+```r
+data(mtcars)
+model <- lm(mpg ~ am + gear, mtcars)
+model$coef
+```
+
+```
+## (Intercept)          am        gear 
+##    16.86468     7.14156     0.08805
+```
+
+--- .class #id 
+
+## Conclusion: The MPG Estimator App is what you need!
+
+Distances in the US are long, fuel stations may be far away, but with the MPG estimator app you will always know how far you get, with every gallon you have in your tank! 
+
+By only providing a few characteristics, the MPG Estimator App gives you the vital information you need: the expected MPG!
+
+

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The MPG Estimator App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="The MPG Estimator App">
+  <meta name="author" content="drs. T. Stamper">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>The MPG Estimator App</h1>
+    <h2>Always know how far you can go</h2>
+    <p>drs. T. Stamper<br/>BI Engineer (IT consultancy)</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Problem</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Imagine yourself planning to go on a long road trip and possibly crossing multiple states during your journey..</p>
+
+<p>Distances in the US are long. The distance to a fuel station, when travelling from state to state, might be very large or worse: unknown. And you don&#39;t want to get &#39;caught out&#39;, running out of fuel in the middle of nowhere..</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The solution</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The MPG Estimator App is your help! </p>
+
+<p>By providing some basic characteristics of your car, the MPG Estimator App will give you a very accurate estimate of the mileage you can get out of each gallon of fuel. It only needs to know the type of transmission your car has and the number of forward gears.</p>
+
+<p>No more worries or uncertainty about getting to your destination on the fuel you have: you can now determine whether you will make it or not!</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>The secret of the App</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The app uses a model, that was developed using a database (mtcars) with MPG and other information of 32 cars, to compute an estimate. This model has a number of so called &#39;coefficients&#39; (see information below), which, applied using the provided values of the characteristics (am = type of transmission and gear), will produce the estimate.</p>
+
+<pre><code class="r">data(mtcars)
+model &lt;- lm(mpg ~ am + gear, mtcars)
+model$coef
+</code></pre>
+
+<pre><code>## (Intercept)          am        gear 
+##    16.86468     7.14156     0.08805
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Conclusion: The MPG Estimator App is what you need!</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Distances in the US are long, fuel stations may be far away, but with the MPG estimator app you will always know how far you get, with every gallon you have in your tank! </p>
+
+<p>By only providing a few characteristics, the MPG Estimator App gives you the vital information you need: the expected MPG!</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Problem'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The solution'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='The secret of the App'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion: The MPG Estimator App is what you need!'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
